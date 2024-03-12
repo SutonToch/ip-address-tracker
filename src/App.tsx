@@ -1,35 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {FormEvent, useState} from "react"
+import Arrow from "./assets/icon-arrow.svg"
+import Bg_pattern_desktop from "./assets/pattern-bg-desktop.png"
+import Bg_pattern_mobile from "./assets/pattern-bg-mobile.png"
+import './styles/App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+
+  const [input, setInput] = useState("")
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    console.log(e)
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <main>
+        <h1>IP Address Tracker</h1>
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <input 
+            type="text" 
+            placeholder="Search for any IP address or domain" 
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            required
+          />
+          <input 
+            type="image" 
+            src={Arrow} 
+            alt="submit" 
+          />
+        </form>
+        <div className="response-container">
+          <div>
+            <h2>IP ADDRESS</h2>
+            <p>192.212.174.101</p>
+          </div>
+          <div>
+            <h2>LOCATION</h2>
+            <p>Brooklyn, NY 10001</p>
+          </div>
+          <div>
+            <h2>TIMEZONE</h2>
+            <p>UTC -05:00</p>
+          </div>
+          <div>
+            <h2>ISP</h2>
+            <p>SpaceX Starlink</p>
+          </div>
+        </div>
+      </main>
+      <div className="bg">
+        <picture>
+          <source media="(min-width: 500px)" srcSet={Bg_pattern_desktop}/>
+          <img src={Bg_pattern_mobile} alt=""/>
+        </picture>
+        {/* map */}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
-
-export default App
