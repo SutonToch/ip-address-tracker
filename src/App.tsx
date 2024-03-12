@@ -2,6 +2,7 @@ import {FormEvent, useState} from "react"
 import Arrow from "./assets/icon-arrow.svg"
 import Bg_pattern_desktop from "./assets/pattern-bg-desktop.png"
 import Bg_pattern_mobile from "./assets/pattern-bg-mobile.png"
+import Map from "./Map.tsx"
 import './styles/App.css'
 
 export default function App() {
@@ -55,7 +56,7 @@ export default function App() {
           <source media="(min-width: 500px)" srcSet={Bg_pattern_desktop}/>
           <img src={Bg_pattern_mobile} alt=""/>
         </picture>
-        {/* map */}
+        <Map />
       </div>
     </>
   )
