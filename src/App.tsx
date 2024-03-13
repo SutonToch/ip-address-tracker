@@ -8,6 +8,14 @@ import './styles/App.css'
 export default function App() {
 
   const [input, setInput] = useState("")
+  const [ipAdressInfo, setIPAdressInfo] = useState({
+    ipAdress: "192.212.174.101",
+    location: "Brooklyn, NY 10001",
+    timezone: "UTC -05:00",
+    isp: "SpaceX Starlink",
+    latitude: 51.505,
+    longitude: -0.09,
+  })
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -35,22 +43,22 @@ export default function App() {
         <div className="response-container">
           <div className="response-item-wrapper">
             <h2>IP ADDRESS</h2>
-            <p>192.212.174.101</p>
+            <p>{ipAdressInfo.ipAdress}</p>
           </div>
           <div className="divider" />
           <div className="response-item-wrapper">
             <h2>LOCATION</h2>
-            <p>Brooklyn, NY 10001</p>
+            <p>{ipAdressInfo.location}</p>
           </div>
           <div className="divider" />
           <div className="response-item-wrapper">
             <h2>TIMEZONE</h2>
-            <p>UTC -05:00</p>
+            <p>{ipAdressInfo.timezone}</p>
           </div>
           <div className="divider" />
           <div className="response-item-wrapper">
             <h2>ISP</h2>
-            <p>SpaceX Starlink</p>
+            <p>{ipAdressInfo.isp}</p>
           </div>
         </div>
       </main>
@@ -59,7 +67,10 @@ export default function App() {
           <source media="(min-width: 500px)" srcSet={Bg_pattern_desktop}/>
           <img src={Bg_pattern_mobile} alt=""/>
         </picture>
-        <Map />
+        <Map 
+          latitude={ipAdressInfo.latitude}
+          longitude={ipAdressInfo.longitude}
+        />
       </div>
     </>
   )
