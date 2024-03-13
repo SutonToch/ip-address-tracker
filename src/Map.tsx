@@ -1,5 +1,6 @@
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import RecenterMap from "./RecenterMap.tsx";
 
 interface MapProps {
   latitude:number,
@@ -14,7 +15,10 @@ export default function Map(props:MapProps) {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-
+          <RecenterMap 
+            lat={props.latitude}
+            lng={props.longitude}
+          />
         </MapContainer>
     )
 }

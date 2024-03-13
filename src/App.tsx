@@ -19,7 +19,21 @@ export default function App() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    console.log(e)
+    getIPInfo()
+  }
+
+  async function getIPInfo() {
+    const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_yq8i8sCRQxB5Tunxa4tlyFx0zGZTf&ipAddress=${input}`)
+    const data = await response.json()
+
+    setIPAdressInfo({
+      ipAdress: data.ip,
+      location: `${data.location.city}, ${data.location.country} ${data.location.postalCode}`,
+      timezone: data.location.timezone,
+      isp: data.isp,
+      latitude: data.location.lat,
+      longitude: data.location.lng,
+    })
   }
 
   return (
