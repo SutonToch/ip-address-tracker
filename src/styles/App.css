@@ -50,7 +50,7 @@ form input[type=image] {
   padding: 0.3em;
   margin-top: 1.5em;
 }
-.response-container div {
+.response-container .response-item-wrapper {
   padding: 0.3em;
 }
 .response-container h2 {
@@ -75,6 +75,39 @@ form input[type=image] {
 .bg img {
   height: 33%;
   width: 100%;
+}
+
+@media (min-width: 500px) {
+  main h1 {
+    font-size: 32px;
+    margin-block: 0.8em;
+  }
+  form {
+    width: 40%;
+  }
+  .response-container {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    max-width: 75%;
+    padding: 2em 0;
+  }
+  .response-container .response-item-wrapper {
+    width: 25%;
+    padding: 0 2rem;
+  }
+  .response-container .divider {
+    width: 1px;
+    height: 75px;
+    background-color: hsl(0, 0%, 59%);
+    align-self: center;
+  }
+  .response-container h2 {
+    font-size: 12px;
+  }
+  .response-container p {
+    font-size: 27px;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */

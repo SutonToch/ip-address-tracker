@@ -33,19 +33,22 @@ export default function App() {
           />
         </form>
         <div className="response-container">
-          <div>
+          <div className="response-item-wrapper">
             <h2>IP ADDRESS</h2>
             <p>192.212.174.101</p>
           </div>
-          <div>
+          <div className="divider" />
+          <div className="response-item-wrapper">
             <h2>LOCATION</h2>
             <p>Brooklyn, NY 10001</p>
           </div>
-          <div>
+          <div className="divider" />
+          <div className="response-item-wrapper">
             <h2>TIMEZONE</h2>
             <p>UTC -05:00</p>
           </div>
-          <div>
+          <div className="divider" />
+          <div className="response-item-wrapper">
             <h2>ISP</h2>
             <p>SpaceX Starlink</p>
           </div>

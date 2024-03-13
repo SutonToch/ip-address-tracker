@@ -54,12 +54,12 @@ form {
     padding: 0.3em;
     margin-top: 1.5em;
 
-    div {
+    .response-item-wrapper {
         padding: 0.3em;
     }
 
     h2 {
-        font-size: var.$fs-small;
+        font-size: var.$fs-tiny;
         color: var.$clr-dark-gray;
         font-weight: var.$fw-bold;
         letter-spacing: 1px;
@@ -84,3 +84,42 @@ form {
         width: 100%;
     }
 }
+
+@media (min-width: 500px) {
+    main h1 {
+        font-size: var.$fs-huge;
+        margin-block: 0.8em;
+    }
+
+    form {
+        width: 40%;
+    }
+
+    .response-container {
+        display: flex;
+        justify-content: space-around;
+        text-align: left;
+        max-width: 75%;
+        padding: 2em 0;
+
+        .response-item-wrapper {
+            width: 25%;
+            padding: 0 2rem;
+        }
+
+        .divider {
+            width: 1px;
+            height: 75px;
+            background-color: var.$clr-dark-gray;
+            align-self: center;
+        }
+
+        h2 {
+            font-size: var.$fs-small;
+        }
+
+        p {
+            font-size: var.$fs-large;
+        }
+    }
+} 
