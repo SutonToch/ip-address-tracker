@@ -52,7 +52,7 @@ form {
     background-color: var.$clr-white;
     border-radius: 15px;
     padding: 0.3em;
-    margin-top: 1.5em;
+    margin-top: 1.5rem;
 
     .response-item-wrapper {
         padding: 0.3em;
@@ -85,7 +85,7 @@ form {
     }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 1400px) {
     main h1 {
         font-size: var.$fs-huge;
         margin-block: 0.8em;
@@ -101,6 +101,7 @@ form {
         text-align: left;
         max-width: 75%;
         padding: 2em 0;
+        margin-top: 3rem;
 
         .response-item-wrapper {
             width: 25%;

@@ -9,7 +9,7 @@ export default function Map() {
     const longitude = -0.09;
   
     return (
-        <MapContainer center={[latitude, longitude]} zoom={13} ref={mapRef} zoomControl={false} style={{height: "67%", width: "100vw", marginTop: "-5px"}}>
+        <MapContainer center={[latitude, longitude]} zoom={13} ref={mapRef} zoomControl={false} style={{height: "67%", width: "100vw", marginTop: "-4px"}}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
