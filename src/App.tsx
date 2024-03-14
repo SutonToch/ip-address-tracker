@@ -1,4 +1,4 @@
-import {FormEvent, useState} from "react"
+import {FormEvent, useEffect, useState} from "react"
 import Arrow from "./assets/icon-arrow.svg"
 import Bg_pattern_desktop from "./assets/pattern-bg-desktop.png"
 import Bg_pattern_mobile from "./assets/pattern-bg-mobile.png"
@@ -17,6 +17,22 @@ export default function App() {
     longitude: -122.401,
   })
   const [responseSuccess, setResponseSuccess] = useState(true)
+
+  useEffect(() => {
+    getInitialInfo()
+  }, [])
+
+  async function getInitialInfo() {
+    try {
+      const response = await fetch("https://api.ipify.org?format=json")
+      const data = await response.json()
+      setInput(data.ip)
+      getInfo()
+    } catch(err) {
+      console.error("Something went wrong while getting the initial Information")
+      console.log(err)
+    }
+  }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -48,7 +64,6 @@ export default function App() {
       })
       setResponseSuccess(true)
     } catch(err) {
-      //error handling
       setResponseSuccess(false)
     }
   }
