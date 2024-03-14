@@ -6,7 +6,7 @@ interface props {
     lng:number
 }
 
-export default function RecenterAutomatically({lat, lng}:props) {
+export default function RecenterMap({lat, lng}:props) {
     const map = useMap();
     
     useEffect(() => {
